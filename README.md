@@ -2,7 +2,7 @@
 
 An AI-powered Chrome extension built with **Java Spring Boot** and **Google Gemini API** to generate instant, smart email replies.
 
-## 📘 Description (20 words)
+## 📘 Description 
 AI-powered Chrome extension using Java Spring Boot and Google Gemini API to generate intelligent email replies with one-click convenience.
 
 ## 📂 Features
