@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/email")
-@CrossOrigin(origins = "*")
+// @CrossOrigin(origins = "*")  // Remove this annotation
 
 public class EmailGeneratorController {
 
