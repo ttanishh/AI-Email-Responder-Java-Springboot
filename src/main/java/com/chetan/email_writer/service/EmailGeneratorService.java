@@ -53,7 +53,6 @@ public class EmailGeneratorService {
 
         } catch (WebClientResponseException e) {
             if (e.getStatusCode().value() == 429) {
-                // Rate limit exceeded
                 return "Sorry, as we are using the base/free model of Google Gemini, the rate limit has been exceeded. Please try again after some time.";
             } else {
                 return "Error from Google API: " + e.getStatusCode() + " - " + e.getResponseBodyAsString();
@@ -67,7 +66,16 @@ public class EmailGeneratorService {
         String tonePart = (emailRequest.getTone() != null && !emailRequest.getTone().isEmpty())
                 ? "Use a " + emailRequest.getTone() + " tone. "
                 : "";
-        return "Generate a professional email reply. " + tonePart + "Do not include a subject line. Original email: " + emailRequest.getEmailContent();
+
+        // Check if we have a subject for generating new email
+        if (emailRequest.getSubject() != null && !emailRequest.getSubject().trim().isEmpty()) {
+            return "Generate a professional email body based on the following subject line. " + tonePart + 
+                   "Do not include a subject line in the response. Subject: " + emailRequest.getSubject();
+        }
+        
+        // If no subject, use original email content for reply
+        return "Generate a professional email reply. " + tonePart + 
+               "Do not include a subject line. Original email: " + emailRequest.getEmailContent();
     }
 
     private String extractResponse(String response) {
