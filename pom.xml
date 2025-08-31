@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.chetan</groupId>
-    <artifactId>email-writer</artifactId>
+    <artifactId>tanish-email-assistant</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>email-writer</name>
-    <description>email writer extension</description>
+    <name>tanish-email-assistant</name>
+    <description>tanish email assistant extension</description>
     <url>http://example.com</url> <!-- Replace with your project URL -->
     <licenses>
         <license>

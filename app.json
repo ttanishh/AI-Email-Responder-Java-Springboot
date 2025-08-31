@@ -1,0 +1,22 @@
+{
+  "name": "Tanish Email Assistant",
+  "description": "AI-powered email reply generator using Spring Boot and Google Gemini API",
+  "repository": "https://github.com/yourusername/tanish-email-assistant",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["java", "spring-boot", "ai", "email", "gemini"],
+  "env": {
+    "GEMINI_API": {
+      "description": "Google Gemini API endpoint URL",
+      "value": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+    },
+    "GEMINI_KEY": {
+      "description": "Your Google Gemini API key",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    }
+  ]
+}
